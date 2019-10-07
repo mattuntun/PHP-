@@ -77,6 +77,23 @@ while($x<=100){
 
 ?>
 
+<?php
+
+for($x=1;$x<=100;$x++){
+  print "$x</br>";
+
+  if($x%3==0&&$x%5==0){
+    print"fizzbuzz</br>";
+    }
+  if($x%3==0){
+    print"fizz</br>";
+  }
+  if($x%5==0){
+    print"buzz</br>";
+  }
+}
+?>
+
 
 </body>
 </html>
