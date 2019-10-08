@@ -63,6 +63,7 @@ for(初期値;条件;増減){
 処理
 
 }
+<br>
 
 
 
@@ -71,16 +72,17 @@ for(初期値;条件;増減){
 $x=1;
 
 while($x<=100){
-  print "$x</br>";
-   $x=$x+1;
-   print "$x</br>";
-   if($x%3==0&&$x%5==0){
+  
+    if($x%3==0&&$x%5==0){
      print"fizzbuzz</br>";
     }elseif($x%3==0){
       print 'fizz</br>';
     }elseif($x%5==0) {
       print'buzz</br>';
+    }else{
+      print "$x</br>";
     }
+    $x=$x+1;
   }
 
 
@@ -91,17 +93,18 @@ while($x<=100){
 
 <?php
 
-for($x=1;$x<=100;$x++){
-  print "$x</br>";
-
-  if($x%3==0&&$x%5==0){
-     print"fizzbuzz</br>";
-    }elseif($x%3==0){
-     print"fizz</br>";
-    }elseif($x%5==0){
-    print"buzz</br>";
-    }
-   }
+for ($x=1; $x<=100; $x++) {
+  
+  if ($x %3 == 0 && $x %5 == 0) {
+      print "fizzbuzz</br>";
+  } elseif ($x %3 == 0) {
+      print "fizz</br>";
+  } elseif ($x %5 == 0) {
+      print "buzz</br>";
+  } else {
+      print "$x</br>";
+  }
+ }
 ?>
 
 
