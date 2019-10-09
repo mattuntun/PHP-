@@ -32,21 +32,30 @@
 
   </form>
 
-  <h2>足し算で試してみます</h2>
+  <h2>計算してみます</h2>
 
   <form action="function-practice.php" method="POST">
-    <p>足し算します。数字を入力してください</p>
+    <p>計算します。数字と式を入力してください</p>
+    <p>α数とβ数で計算します</p>
 
-    <p>α＋βをします</p>
-    <p>ファンクションの初期値は100です</p>
-    
+        
     <p>αの値を入力してください</p>
     <input type="number" name="αの値">
+   
     <br>
-    <p>βの結果を入力してください</p>
+    <p>式を選択してください</p>
+    <select name="siki" style=" width:100px">
+      <option value="足す">+</option>
+      <option value="引く">-</option>
+      <option value="掛ける">×</option>
+      <option value="割る">÷</option>
+    </select>
+    <br>
+     
+    <p>βの数字を入力してください</p>
     <input type="number" name="βの値">
     <br>
-    <input type="submit" value="足し算します">
+    <input type="submit" value="計算します">
 
   </form>
 

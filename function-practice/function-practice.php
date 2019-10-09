@@ -68,33 +68,86 @@
 
 <br>
 
-<h2>足し算で試してみますの送信結果は以下</h2><br>
-
+<h2>計算してみますの送信結果は以下</h2><br>
 
 <?php
 
-print 'α＋βをします';
+print '<h3>ifとfunction</h3>';
+
+
+print "前頁の結果を反映をします</br>";
 
 $α=$_POST['αの値'];
 $β=$_POST['βの値'];
+$式=$_POST['siki'];
 
 function tashizan($α,$β) {
   print $α+$β;
 }
 
-if ( $α == '' && $β == '' ) {
-  print tashizan (100,100);
-
-} elseif ( $α == '' ) {
-  tashizan (100,$β);
-  
-} elseif ( $β == '' ) {
-  tashizan (100,$β);
-
-} else {
-  tashizan ($α,$β);
-
+function hikizan($α,$β) {
+  print $α-$β;
 }
+
+function kakezan($α,$β) {
+  print $α*$β;
+}
+
+function warizan($α,$β) {
+  print $α/$β;
+}
+
+
+if ( $α == '' || $β == '' ) {
+  print 数字を入力してください;
+  print "</br>";
+
+} elseif ( $式 == '足す' ) {
+  tashizan ($α,$β);
+  print "</br>";
+  
+} elseif ( $式 == '引く' ) {
+  hikizan ($α,$β);
+  print "</br>";
+
+} elseif ( $式 == '掛ける' ) {
+  kakezan ($α,$β);
+  print "</br>";
+
+} elseif ( $式 == '割る' ) {
+  warizan ($α,$β);
+  print "</br>";
+  
+}
+
+print '<h3>switchとfunction</h3>';
+
+if ( $α == '' || $β == '' ){
+  print'値を入力してください';
+
+ }else{
+
+  switch ($式) {
+    case'足す';
+    tashizan ($α,$β);
+    break;
+
+    case'引く';
+    hikizan ($α,$β);
+    break;
+
+    case'掛ける';
+    kakezan ($α,$β);
+    break;
+
+    case'割る';
+    warizan ($α,$β);
+    break;
+
+  }
+}
+
+
 
 ?>
 
