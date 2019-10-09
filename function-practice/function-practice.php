@@ -12,31 +12,15 @@
   <h2>送信後のページです</h2>
 
 
-  
-
-
     <?php
+
     $from= $_POST ['from'];
     $specialty= $_POST ['specialty'];
     $favorite= $_POST['favorite'];
 
-    print "<p>私の出身地は</p></br>";
-        print "$from"."で<br/>";
+ 
 
-        print "<p>出身地の名産品は</p></br>";
-        print "$specialty"."です";
-
-    
-    function anketo ( $from="わかりません", $specialty="ありません",$favorite="ありません"){
-      if ( $from =="わかりません") {
-        print 'どこか指定して下さい';
-        
-        print'<form>';
-        print '<input type="button" onclick="history.back()" value="戻る">';
-        print'</form>';
-
-      } else {
-
+    function anketo ($from,$specialty,$favorite) {
         print "<p>私の出身地は</p></br>";
         print "$from"."で<br/>";
 
@@ -45,52 +29,47 @@
 
         print "<p>その中で好きなものは</P>";
         print "$favorite"."です";
-
-      }
-
     }
 
-    anketo ("$from","$specialty","$favorite");
+    if ( $from == "わかりません" ) {
+      print'どこか指定して下さい';
+      print'<form>';
+      print '<input type="button" onclick="history.back()" value="戻る">';
+      print'</form>';
+
+       } elseif ( $specialty=='' && $favorite=='' ) {
+         anketo($from,'ありません','ありません');
+         print'<form>';
+         print '<input type="button" onclick="history.back()" value="戻る">';
+         print'</form>';
+
+       } elseif ( $specialty == '' ) {
+        anketo( $from,'ありません',$favorite );
+        print'<form>';
+        print '<input type="button" onclick="history.back()" value="戻る">';
+        print'</form>';
+       
+       } elseif ($favorite == '' ) {
+        anketo( $from,$specialty,'ありません' );
+        print'<form>';
+        print '<input type="button" onclick="history.back()" value="戻る">';
+        print'</form>';
+
+       } else {
+        anketo ( $from,$specialty,$favorite );
+        print'<form>';
+        print '<input type="button" onclick="history.back()" value="戻る">';
+        print'</form>';
+       }
+
 
     ?>
 
-<h2>掛け算で練習</h2>
-<br>
-
-
-
-<?php
-function kakezan($a,$b=5){
-  return $a*$b;
-}
- 
-// 引数を1つ指定
-echo kakezan(5) ."\n";
-// 引数を2つ指
-echo kakezan(10,2) ."\n";
-?>
-
-<h2>足し算で練習</h2>
-<br>
-
-<?php
-
-$X=15;
-$Y=20;
-
-function tasizan($X,$Y){
- print $X+$Y;
-}
-print tasizan($X,$Y);
-
-
-
-?>
 
 <br>
 
-<h2>足し算で試してみますの送信結果は以下</h2>
-<br>
+<h2>足し算で試してみますの送信結果は以下</h2><br>
+
 
 <?php
 
@@ -99,17 +78,26 @@ print 'α＋βをします';
 $α=$_POST['αの値'];
 $β=$_POST['βの値'];
 
-function tashizan($α=100,$β=100) {
-  return $α+$β;
+function tashizan($α,$β) {
+  print $α+$β;
+}
+
+if ( $α == '' && $β == '' ) {
+  print tashizan (100,100);
+
+} elseif ( $α == '' ) {
+  tashizan (100,$β);
+  
+} elseif ( $β == '' ) {
+  tashizan (100,$β);
+
+} else {
+  tashizan ($α,$β);
 
 }
 
-print tashizan($α,$β);
-
 ?>
 
- 
-  
 </body>
 </html>
 
