@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,8 +20,13 @@
     $specialty= $_POST ['specialty'];
     $favorite= $_POST['favorite'];
 
-    
+    print "<p>私の出身地は</p></br>";
+        print "$from"."で<br/>";
 
+        print "<p>出身地の名産品は</p></br>";
+        print "$specialty"."です";
+
+    
     function anketo ( $from="わかりません", $specialty="ありません",$favorite="ありません"){
       if ( $from =="わかりません") {
         print 'どこか指定して下さい';
@@ -49,6 +54,8 @@
 
     ?>
 
+<h2>掛け算で練習</h2>
+<br>
 
 
 
@@ -63,20 +70,45 @@ echo kakezan(5) ."\n";
 echo kakezan(10,2) ."\n";
 ?>
 
+<h2>足し算で練習</h2>
+<br>
+
+<?php
+
+$X=15;
+$Y=20;
+
+function tasizan($X,$Y){
+ print $X+$Y;
+}
+print tasizan($X,$Y);
 
 
 
+?>
 
+<br>
+
+<h2>足し算で試してみますの送信結果は以下</h2>
+<br>
+
+<?php
+
+print 'α＋βをします';
+
+$α=$_POST['αの値'];
+$β=$_POST['βの値'];
+
+function tashizan($α=100,$β=100) {
+  return $α+$β;
+
+}
+
+print tashizan($α,$β);
+
+?>
 
  
-
-
-
-
-
-
-
-
   
 </body>
 </html>
