@@ -179,9 +179,58 @@ for($i=1; $i <= 10; $i = $i+1){
 ?>
 
 
+<?php
 
+$fruite = array("apple","lemon","banana");
+sort($fruite);
 
+print_r ($fruite);
 
+?>
   
+<?php
+
+function get_price($price) {
+  $price *=1.08;
+  return $price;
+}
+
+echo get_price(300)."</br></br></br></br>";
+
+function de_demo($name="aaaa") {
+  echo "私の名前は".$name."です";
+}
+
+echo de_demo("baka")."</br></br></br></br>";
+echo de_demo()."</br></br></br></br>";
+
+
+function vending_machin($kingaku,$juce) {
+  if ($kingaku >= 120) {
+    $oturi = $kingaku - "120";
+    
+    return "購入いただきありがとうございます</br>
+          お買い上げいただいた商品は</br>"
+          .$juce."です</br>
+          おつりは</br>"
+          .$oturi."円です";
+          
+  } else {
+    $husoku = 120 - $kingaku;
+    
+    return "お金が足りません</br>"
+          .$husoku."円不足しています";
+  } 
+}
+  echo vending_machin("89","コーラ");
+    
+
+
+
+
+
+?>
+
+
 </body>
 </html>
