@@ -52,7 +52,7 @@ class Matsushita implements Vampire_conditions{
   
 $quite_human = new Matsushita("松下");
 
-$quite_human->action("");
+$quite_human->action();
 $quite_human->put_on("石仮面");
 
 
@@ -94,7 +94,7 @@ class Vampire_matsushita extends vampire {
 
 $before_quite_human = new Vampire_matsushita("松下");
 
-$before_quite_human->action("");
+$before_quite_human->action("ディオ");
 $before_quite_human->blood_sucking ();
 $before_quite_human->characteristic ();
 $before_quite_human->ban ();
